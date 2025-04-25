@@ -1,0 +1,309 @@
+<div class="container-fluid mt-0">
+  <!-- Titre "competence" -->
+  <div class="row mb-3 mt-0">
+    <div class="col text-center">
+      <h1 class="display-4 header-title" id="top">Mes compétences</h1>
+      <p class="lead text-muted">Découvrez les compétences techniques et professionnelles que j'ai développées au cours de ma formation.</p>
+    </div>
+  </div>
+
+  <!-- Cartes de compétences par catégories -->
+  <div class="row justify-content-center mb-5">
+    <% @categories.each do |category| %>
+      <div class="col-md-5 m-3 p-4 border rounded shadow-sm bg-light category-card">
+        <h2 class="text-center fw-bold mb-3"><%= category.title %></h2>
+        
+        <div class="row gx-3 gy-3">
+          <% category.competences.each do |competence| %>
+            <div class="col-md-4 upEffect" style="margin-bottom: 16px;">
+              <div class="p-3 border rounded d-flex flex-column align-items-center text-center shadow-sm bg-white competence-card">
+                <% if competence.logo.present? %>
+                  <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 70px; object-fit: contain;" %>
+                <% else %>
+                  <i class="bi bi-check-circle-fill text-success fs-4"></i>
+                <% end %>
+                <% if competence.useTitle == true %>
+                  <h3 class="mt-2 fw-semibold competence-title"><%= competence.title %></h3>
+                <% end %>
+                <% if competence.projets.any? %>
+                  <%= link_to "Voir les projets", 
+                  projets_path(filter: {competence_ids: [competence.id]}, highlight: competence.id), 
+                  class: "btn btn-link btn-sm mt-2" %>
+                <% end %>
+              </div>
+              <% if session[:admin] %>
+                  <div class="mt-2">
+                    <a href="<%= edit_competence_path(competence.id) %>" class="btn btn-success btn-sm">Editer</a>
+                    <a href="<%= competence_path(competence.id) %>" 
+                       class="btn btn-danger btn-sm" 
+                       data-confirm="Êtes-vous sûr ?" 
+                       data-method="DELETE">Supprimer</a>
+                  </div>
+                <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if session[:admin] %>
+    <div class="text-center mt-4">
+      <a href="<%= new_competence_path %>" class="btn btn-success">Ajouter une nouvelle compétence</a>
+    </div>
+  <% end %>
+
+  <div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h2 class="display-4 header-title">Tableau de compétences</h2>
+    </div>
+  </div>
+  <div class="card mb-5">
+    <%= image_tag "tableauComp.png", class: "card-img", alt: "Tableau de compétences" %>
+  </div>  
+</div>
+
+  <div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="gestionPatrimoine">Gérer le patrimoine Informatique</h2>
+    </div>
+  </div>
+      <!-- Recenser et identifier les ressources numériques -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Recenser et identifier les ressources numériques</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, 
+        je me suis basé sur le cahier des charges du projet afin de recenser et identifier les ressources numériques que je devrais utiliser. <br><br>
+        Le projet devant être réalisé en PHP et MySQL avec le framework CodeIgniter, j'ai utilisé l'IDE PHPStorm pour le développement. <br><br>
+        Afin de gérer ma base de donnée MySQL, j'ai utilisé l'outil d'administration phpMyAdmin avec Wamp. <br><br>
+        En termes de documentation, j'ai utilisé le site officiel de PhpStorm et CodeIgniter pour m'aider à comprendre plus en profondeur le fonctionnement de ces outils. <br><br>
+        Je me suis également servi de la documentation de MySQL et de phpMyAdmin pour m'aider à mettre en place la base de donnée du projet. <br><br>
+         </p>
+        <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "ConfigurationPHPSTORM", alt: "ConfigurationPHPSTORM", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "PHPmyAdmin", alt: "PHPmyAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "Wamp", alt: "Wamp", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        </div>
+    </div>
+
+        <!-- Exploiter référentiel et norme -->
+<div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+  <h3 class="h5 mb-3">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</h3>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+  </div>
+  <p>
+    Dans le cadre du développement de ce portfolio, j’ai été amené à respecter les normes et standards imposés par le framework Ruby on Rails.<br><br>
+    Ruby on Rails repose sur une architecture MVC (Model-View-Controller). J’ai donc pu réemployer les compétences acquises lors de ma formation afin d'organiser les fichiers et les responsabilités du code selon cette logique. <br><br>
+    J’ai également respecté les conventions de nommage imposées par Rails, que ce soit pour les fichiers, les classes ou les méthodes. Cela garantit une bonne intégration avec les outils automatiques du framework, et un comportement prévisible du code. <br><br>
+    L’utilisation de routes RESTful m’a permis de mettre en place une navigation cohérente, lisible et conforme aux bonnes pratiques du web. J’ai aussi structuré la base de données de manière normalisée pour éviter les redondances et assurer l’intégrité des données. <br><br>
+    Enfin, j’ai intégré Bootstrap pour appliquer des normes d’ergonomie et de responsive design.<br><br>
+    L’ensemble de ces éléments m’a permis de produire un code conforme aux exigences du métier, en m’appuyant sur des référentiels techniques largement adoptés par les prestataires informatiques.
+  </p>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "controleur", alt: "Controlleur RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "model", alt: "Model RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "routes", alt: "Routes RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        </div>
+</div>
+
+<!-- Mettre en place et vérifier habilitation -->
+<div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+  <h3 class="h5 mb-3">Mettre en place et vérifier les niveaux d'habilitation assiciés à un service</h3>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+  </div>
+  <p>
+    Dans le cadre du développement du projet funEnBulle, j'ai été amené à mettre en place des niveaux d'habilitation pour les utilisateurs de l'application. <br><br>
+    Dans un premier temps, j'ai intégré un utilisateur selon les identifiants fournis par le client. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "HabilitationFunEnBulle", alt: "HabilitationFunEnBulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+    J'ai ensuite mis en place dans ma base de données une table "users" qui contient les informations de chaque utilisateur, y compris son rôle (admin ou utilisateur). <br><br>
+    L'admin a la possibilité de créer, modifier et supprimer les données accessibles par le biais d'une interface réservée. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "RoleUsersFunEnbulle", alt: "RoleUsersFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+    J'ai également mis en place un système de vérification des habilitations lors de l'accès à certaines fonctionnalités de l'application. <br>
+    Par exemple, seules les personnes ayant le rôle d'admin peuvent accéder à la page d'administration et effectuer des modifications sur les données. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "FonctionCheckAdminFunEnbulle", alt: "FonctionCheckAdminFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+</div>
+
+    <!-- Gérer des sauvegardes -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Gérer des sauvegardes</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du portfolio, afin d'avoir constamment une version fonctionnelle de l'application, un système de sauvegarde est mis en place. <br><br>
+        Travaillant de manière individuelle, je n'ai pas ressenti le besoin d'utiliser Git pour versionner mon code. <br><br>
+        J'utilise un système de dossier de sauvegarde sur mon ordinateur, où je dépose les fichiers de l'application à chaque fois que je fais une modification importante. <br><br>
+        Les dossiers sont triés par date et les fichiers sont nommés de manière à ce que je puisse facilement retrouver la version que je cherche. </p>
+        <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "portfolioVersions", alt: "Dossier répertoriant les versions quotidiennes", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "portfolioVersions2", alt: "Intérieur d'un dossier, contient les fichiers zip du projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        </div>
+    </div>
+
+ <!-- Respect des règles -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Vérifier le respect des règles d'utilisation des resssources numériques</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Lors du développement de mon site portfolio, j’ai pris soin de respecter les règles d’utilisation des ressources numériques. 
+        Toutes les images utilisées sont libres de droits (Unsplash), les bibliothèques utilisées sont open source (Bootstrap, Rails), et les données affichées ne portent pas atteinte à la vie privée. 
+        Un fichier de crédits est disponible pour lister l’ensemble des sources et licences utilisées. </p>
+        <%= link_to "Crédits", "/credits", class: "nav-link" %>
+    </div>
+
+  <!-- Répondre aux incidents -->
+<div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="reponseIncident">Répondre aux incidents <br>et aux demandes d'assistance et d'évolution</h2>
+    </div>
+  </div>
+<!-- Collecter suivre et orienter demande -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Collecter, suivre et orienter des demandes</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, l'ensemble des problèmes rencontrés lors du développement de l'application ont été collectés et suivis dans un fichier de suivi de projet. <br><br>
+        Ce fichier contient une section réservée aux repérages des problèmes rencontrés, ainsi qu'une section de résolution des problèmes, explicitant le processus employé. <br><br>
+        Le problème est classifié comme "Résolu" lorsque la solution a été mise en place et que le problème n'est plus présent. <br><br>
+      </p>
+        <%= image_tag "problemeResolution", alt: "Probleme et sa résoltion", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "noteProblemeEtCorrection", alt: "Probleme suivi quotidien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+         <%= image_tag "ExigenceProbleme", alt: "Demande fiche problème", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+
+  <!-- Développer la présence en ligne -->
+<div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="presenceLigne">Développer la présence en ligne de l'organisation</h2>
+    </div>
+  </div>
+<!-- Participer à l'évolution d'un site Web exploiotant les données de l'organisation -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Participer à l'évolution d'un site Web exploitant les données de l'organisation</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre de mon stage de deuxième année, j'ai été amené à faire évoluer certaines pages du CMS de l'entreprise. <br><br>
+        Ces évolutions ont été réalisées en RubyOnRails et on permit d'améliorer la visibilité et de faciliter la prise en mains des services proposés par l'entreprise. <br><br>
+        Les évolutions on également été documenté dans un fichier de suivi. <br><br>
+      </p>
+        <%= image_tag "StageObjectif", alt: "stage objectif", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "EvolutionStage", alt: "Evolution Stage", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+         <%= image_tag "stageEvolutionQuotidien", alt: "stageEvolutionQuotidien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+
+ <!-- Travailler en mode projet -->
+<div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="modeProjet">Travailler en mode projet</h2>
+    </div>
+  </div>
+<!-- Analyser les objectifs et les modalités d'organisation d'un projet -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Analyser les objectifs et les modalités d'organisation d'un projet</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, nous avons reçu deux documents : un cahier des charges et une présentation du projet. <br><br>
+        Nous avons alors pu analyser l'état des lieux et définir un objectif de réalisation à partir d'une liste d'évolution potentielle.<br><br>
+        <%= image_tag "objectifFunEnBulle", alt: "objectifFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Planifier les activités -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Planifier les activités</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Suite à l'étape d'analyse des objectifs, nous avons pu définir des objectifs et proposer un projet de réalisation. <br><br>
+        Ce dernier fait office de plan général et nous nous référons à lui dans le processus de réalisation. <br><br>
+        <%= image_tag "objectifClient", alt: "objectifClient", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %> 
+        <%= image_tag "projetRealisationAdmin", alt: "projetRealisationAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Évaluer les indicateurs de suivi d'un projet et analyser les écarts -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Évaluer les indicateurs de suivi d'un projet et analyser les écarts</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        L'ensemble des modifications apportées au projet sont suivies et notées chaque jour où je travaille dessus. <br><br>
+        Le suivi des modifications implique la présence d'un plan général, un plan quotidien et un bilan quotidien de la réalisation ou non des objectifs fixés pour la journée. <br><br> 
+        <%= image_tag "preuvePrevisionFunEnBulle", alt: "preuvePrevisionFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "tableauSuiviProjet", alt: "tableauSuiviProjet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "sommaire", alt: "sommaire", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Organiser son développement professionnel -->
+<div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="devPro">Organiser son développement professionnel</h2>
+    </div>
+  </div>
+<!-- Évaluer les indicateurs de suivi d'un projet et analyser les écarts -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Mettre en place son environnement d'apprentissage personnel</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre de ce portfolio, j’ai organisé mon environnement personnel en installant et configurant les outils nécessaires au développement Rails, 
+        incluant un éditeur de code (Visual Studio Code), une base de données (PostgreSQL, visualisation avec DBVisualizer) et un outil de déploiement. Mon environnement me permet de tester, corriger et faire évoluer mes projets en autonomie. <br><br>
+        J'utilise les documentations rails et sql et la formation fournie lors de mon stage afin de m'aider à comprendre plus en profondeur les outils et les langages que j'utilise. <br><br>
+        J'utilise Word pour la rédaction de mes documents de suivis et de mes rapports. <br><br>
+      </p>
+      <%= image_tag "preuveInstallRuby", alt: "preuveRuby", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "DBVisualizer", alt: "DBVisualizer", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "VSCode", alt: "VSCode", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+
+<!-- Mettre en oeuvre des outils et des stratégies de veille informationnelle -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Mettre en oeuvre des outils et des stratégies de veille informationnelle</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        <a href="/veille" class="card-link" rel="noopener noreferrer">Page de veille</a>  
+      </p>
+    </div>
+
+<!-- Gérer son identité professionelle -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Gérer son identité professionelle</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Afin de gérer mon identité professionnelle, j'ai créé un compte LinkedIn et un compte GitHub que je mets régulièrement à jour. <br><br>  
+        J'ai également mis en ligne ce portfolio afin de présenter l'ensemble de mes formations, mes expériences professionnelles, mes compétences et mes projets.
+        Il permet également d'afficher une page de contact et fourni les liens nécessaires vers mes réseaux sociaux professionnels ainsi que vers mon CV. <br><br>
+        J'utilise mon vrai nom et mon prénom sur chacun de ces médiums afin de garantir la cohérence de mon identité professionnelle. 
+      </p>
+      <%= image_tag "acceuilLien", alt: "acceuilLien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "Linkedin", alt: "Linkedin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "github", alt: "github", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+
+<!-- Suite Étude -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Développer son projet professionnel</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Ces deux années de formation m'on permis découvrir et de me former à la programmation. 
+        Elles m'ont également permis de confirmer mon souhait de continuer à apprendre et à me former au sein de ce domaine. 
+        Je prévois l'année prochaine de continuer mes études au sein de l'école 42, une formation priorisant la réalisation de projet et le travail de groupe.
+        Une occasion, je pense, de développer mes compétences autant en matière de développement que de travail en équipe tout en me rapprochant de l'emploi.<br><br>  
+      </p>
+      <%= image_tag "42_logo", alt: "42_logo", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>

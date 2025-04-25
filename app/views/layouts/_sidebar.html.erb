@@ -1,0 +1,50 @@
+<!-- Sidebar -->
+  <nav class="sidebar d-flex flex-column p-3">
+    <%= link_to "Camille Boiché", "/accueil", class: "sidebar-brand text-black text-decoration-none" %>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item sous-titre-sidebar">
+        <%= link_to "Mes formations", "/formations", class: "nav-link", style: "padding-left: 0;" %>
+      </li>
+      <li class="nav-item sous-titre-sidebar">
+        <%= link_to "Mes expériences", "/experiences", class: "nav-link", style: "padding-left: 0;" %>
+      </li>
+      <li class="nav-item sous-titre-sidebar">
+        <a href="#" class="nav-link dropdown-toggle" style= "padding-left: 0;" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+          BTS SIO
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><%= link_to "Le BTS SIO", "/formations/2", class: "dropdown-item" %></li>
+          <li><%= link_to "Mes compétences", "/competences", class: "dropdown-item" %></li>
+          <li><%= link_to "Veille informatique", "/veille", class: "dropdown-item" %></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Mes projets", "/projets", class: "nav-link sous-titre-sidebar", style: "padding-left: 0; padding-top: 16px; padding-bottom: 16px" %>
+    <!-- Liste des projets -->
+<div class="project-list mt-2">
+  <% @projets.each do |projet| %>
+    <div class="d-flex align-items-center mb-3 upEffect">
+      <%= link_to projet_path(projet), class: "d-flex align-items-center text-decoration-none" do %>
+        <%= image_tag(projet.image, size: "48x48", alt: projet.title, class: "me-3 rounded") %>
+
+        <div class="d-flex flex-column" style="padding-left: 7px;">
+          <span class="text-black fw-semibold"><%= projet.title %></span>
+          <span class="text-muted small"><%= projet.projet_type %></span>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if session[:admin] %>
+  <a href="<%= new_category_path %>" class="btn btn-success">Ajouter une nouvelle catégorie</a>
+<% end %>
+<% if session[:admin] %>
+    <div class="text-center mt-4">
+      <a href="<%= new_competence_path %>" class="btn btn-success">Ajouter une nouvelle compétence</a>
+    </div>
+  <% end %>
+
+  </li>
+    </ul>
+  </nav>

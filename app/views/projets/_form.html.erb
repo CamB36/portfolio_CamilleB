@@ -1,0 +1,70 @@
+<%= form_with(model: projet) do |form| %>
+  <% if projet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(projet.errors.count, "error") %> prohibited this projet from being saved:</h2>
+      <ul>
+        <% projet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+    <%= form.label :id, "ID" %>
+    <%= form.number_field :id, class: "form-control" %> <!-- Champ pour l'ID -->
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :dateStart, style: "display: block" %>
+    <%= form.date_field :dateStart %>
+  </div>
+
+  <div>
+    <%= form.label :dateEnd, style: "display: block" %>
+    <%= form.date_field :dateEnd %>
+  </div>
+
+  <div>
+    <%= form.label :projet_type, style: "display: block" %>
+    <%= form.text_field :projet_type %>
+  </div>
+
+  <div>
+    <%= form.label :reference, style: "display: block" %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_field :image %>
+  </div>
+
+  <!-- Ajout des compétences -->
+  <div style="margin: 20px 0">
+    <h3>Compétences associées</h3>
+    <% Competence.all.each do |competence| %>
+      <div>
+        <%= check_box_tag "projet[competence_ids][]", 
+                         competence.id, 
+                         projet.competences.include?(competence),
+                         id: dom_id(competence) %>
+        <%= label_tag dom_id(competence), competence.title %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

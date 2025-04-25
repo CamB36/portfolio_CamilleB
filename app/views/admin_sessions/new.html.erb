@@ -1,0 +1,18 @@
+<%# app/views/admin_sessions/new.html.erb %>
+<h1>Si vous n'êtes pas Camille Boiché bravo vous avez déchiffré mon lien secret, néanmoins cette page n'est pas pour vous
+  merci de partir en vitesse
+</h1>
+
+<%= form_with url: login_path do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit 'Se connecter' %>
+<% end %>

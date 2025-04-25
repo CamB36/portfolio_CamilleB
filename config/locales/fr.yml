@@ -1,0 +1,6 @@
+# config/locales/fr.yml
+fr:
+  date:
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+    formats:
+      long: "%d %B %Y"  # Format pour `l(date, format: :long)`

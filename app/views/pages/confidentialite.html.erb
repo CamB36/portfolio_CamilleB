@@ -1,0 +1,29 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="mb-4">Politique de Confidentialité</h1>
+      <p class="text-muted">Dernière mise à jour : <%= l(Date.today, format: :long) %></p>
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <p>
+            Ce portfolio est un site dynamique connecté à une base de données, mais il ne collecte ni ne stocke
+            aucune donnée personnelle relative aux visiteurs.
+          </p>
+          <p>
+            Aucun formulaire de contact, aucun compte utilisateur et aucun outil de suivi (comme Google Analytics) ne sont utilisés.
+          </p>
+          <p>
+            Les seules données affichées concernent les projets, formations et expériences du propriétaire du site.
+          </p>
+          <p>
+            Si vous avez des questions, vous pouvez me contacter directement par email :
+          </p>
+          <p>
+            <%= mail_to "camilleboiche36@gmail.com", "camilleboiche36@gmail.com", class: "text-decoration-none" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="container-fluid mt-0" id="projects-container">
+  <!-- Titre -->
+  <div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h1 class="display-4 header-title">Mes Projets</h1>
+    </div>
+  </div>
+
+  <!-- Barre de recherche -->
+  <div class="row mb-4">
+    <div class="col-md-6 mx-auto">
+      <input class="form-control" 
+             type="text" 
+             id="project-search"
+             placeholder="Nom du projet">
+    </div>
+  </div>
+
+  <!-- Filtres par compétence -->
+  <div class="row mb-4">
+    <div id="competence-filters" class="col-12 text-center">
+      <% Competence.all.each do |c| %>
+        <% # On récupère tous les IDs sélectionnés par URL (en GET ou POST) %>
+        <% selected_ids = Array(params.dig(:filter, :competence_ids)).map(&:to_i) %>
+        <% # On ajoute également le paramètre highlight si présent %>
+        <% highlight_id = params[:highlight].to_i if params[:highlight].present? %>
+        <% active = selected_ids.include?(c.id) || (highlight_id == c.id) %>
+        <button
+          class="btn <%= active ? 'btn-dark' : 'btn-outline-dark' %> m-1 competence-filter"
+          data-competence-id="<%= c.id %>">
+          <%= c.title %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Liste des projets (sera chargée via AJAX) -->
+  <div class="row" id="projects-list">
+    <%= render partial: 'projects_list', locals: { projets: @projets } %>
+  </div>
+
+  <% if session[:admin] %>
+    <p class="mt-4">
+      <a href="<%= new_projet_path %>" class="btn btn-success">Ajouter un nouveau projet</a>
+    </p>
+  <% end %>
+</div>
+
+<script>
+  // Fonction pour filtrer les projets
+  function filterProjects() {
+    const searchTerm = document.getElementById('project-search').value.toLowerCase();
+    const selectedButtons = document.querySelectorAll('.competence-filter.btn-dark');
+    const selectedCompetences = Array.from(selectedButtons).map(btn => btn.dataset.competenceId);
+    
+    // Envoyer la requête AJAX
+    fetch('<%= filter_projets_path %>', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+      },
+      body: JSON.stringify({
+        search: searchTerm,
+        competence_ids: selectedCompetences
+      })
+    })
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('projects-list').innerHTML = html;
+    });
+  }
+
+  // Gestion des clics sur les compétences
+  document.getElementById('competence-filters').addEventListener('click', function(e) {
+    if (e.target.classList.contains('competence-filter')) {
+      e.target.classList.toggle('btn-dark');
+      e.target.classList.toggle('btn-outline-dark');
+      filterProjects();
+    }
+  });
+
+  // Gestion de la recherche
+  document.getElementById('project-search').addEventListener('input', filterProjects);
+</script>

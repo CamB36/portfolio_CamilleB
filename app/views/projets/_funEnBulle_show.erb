@@ -1,0 +1,158 @@
+<div class="container-fluid mt-0"> <!-- Réduire ou supprimer la marge en haut -->
+  <!-- Titre "Formation" -->
+  <div class="row mb-5 mt-0"> <!-- Ligne pour le titre -->
+    <div class="col text-center"> <!-- Colonne centrée -->
+      <h1 class="display-4 header-title">Épreuve E6 : FunEnBulle</h1> <!-- Titre principal -->
+      <p class="lead text-muted">Le but de l’épreuve E6 est de présenter des situations de professionnalisations qui serviront de base pour l’examen. Lors de celui-ci des modifications proposées par le jury devront êtres apportées tout en suivant une démarche professionnelle. </p>
+    </div>
+  </div>
+
+<!-- Intégration du PDF scrollable -->
+<div class="row mb-5">
+  <div class="col text-center">
+    <h2 class="mb-4">Document de présentation</h2>
+    <div style="height: 700px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <iframe src="/documents/4#toolbar=1&navpanes=0&scrollbar=1" 
+              width="100%" 
+              height="100%" 
+              style="border: none;">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Intégration du tableau de compétence -->
+<div class="row mb-5">
+  <div class="col text-center">
+    <h2 class="mb-4">Tableau de compétence</h2>
+    <div>
+      <%= image_tag "TableauFunEnBulle", class: "card-img", alt: "Tableau de compétences FunEnBulle" %>
+    </div>
+  </div>
+</div>
+
+<!-- Preuves de compétences statiques -->
+<div class="row mb-5">
+  <div class="col">
+
+<!-- Recenser et identifier les ressources numériques -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Recenser et identifier les ressources numériques</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, 
+        je me suis basé sur le cahier des charges du projet afin de recenser et identifier les ressources numériques que je devrais utiliser. <br><br>
+        Le projet devant être réalisé en PHP et MySQL avec le framework CodeIgniter, j'ai utilisé l'IDE PHPStorm pour le développement. <br><br>
+        Afin de gérer ma base de donnée MySQL, j'ai utilisé l'outil d'administration phpMyAdmin avec Wamp. <br><br>
+        En termes de documentation, j'ai utilisé le site officiel de PhpStorm et CodeIgniter pour m'aider à comprendre plus en profondeur le fonctionnement de ces outils. <br><br>
+        Je me suis également servi de la documentation de MySQL et de phpMyAdmin pour m'aider à mettre en place la base de donnée du projet. <br><br>
+         </p>
+        <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "ConfigurationPHPSTORM", alt: "ConfigurationPHPSTORM", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "PHPmyAdmin", alt: "PHPmyAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "Wamp", alt: "Wamp", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        </div>
+    </div>
+
+    <!-- Mettre en place et vérifier habilitation -->
+<div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+  <h3 class="h5 mb-3">Mettre en place et vérifier les niveaux d'habilitation assiciés à un service</h3>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+  </div>
+  <p>
+    Dans le cadre du développement du projet funEnBulle, j'ai été amené à mettre en place des niveaux d'habilitation pour les utilisateurs de l'application. <br><br>
+    Dans un premier temps, j'ai intégré un utilisateur selon les identifiants fournis par le client. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "HabilitationFunEnBulle", alt: "HabilitationFunEnBulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+    J'ai ensuite mis en place dans ma base de données une table "users" qui contient les informations de chaque utilisateur, y compris son rôle (admin ou utilisateur). <br><br>
+    L'admin a la possibilité de créer, modifier et supprimer les données accessibles par le biais d'une interface réservée. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "RoleUsersFunEnbulle", alt: "RoleUsersFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+    J'ai également mis en place un système de vérification des habilitations lors de l'accès à certaines fonctionnalités de l'application. <br>
+    Par exemple, seules les personnes ayant le rôle d'admin peuvent accéder à la page d'administration et effectuer des modifications sur les données. <br>
+    <div class="d-flex flex-wrap justify-content-center mb-3">
+      <%= image_tag "FonctionCheckAdminFunEnbulle", alt: "FonctionCheckAdminFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+    </div>
+</div>
+
+<!-- Collecter suivre et orienter demande -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Collecter, suivre et orienter des demandes</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, l'ensemble des problèmes rencontrés lors du développement de l'application ont été collectés et suivis dans un fichier de suivi de projet. <br><br>
+        Ce fichier contient une section réservée aux repérages des problèmes rencontrés, ainsi qu'une section de résolution des problèmes, explicitant le processus employé. <br><br>
+        Le problème est classifié comme "Résolu" lorsque la solution a été mise en place et que le problème n'est plus présent. <br><br>
+      </p>
+        <%= image_tag "problemeResolution", alt: "Probleme et sa résoltion", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "noteProblemeEtCorrection", alt: "Probleme suivi quotidien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+         <%= image_tag "ExigenceProbleme", alt: "Demande fiche problème", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+
+    <!-- Analyser les objectifs et les modalités d'organisation d'un projet -->
+    <div class="mb-5 border rounded p-4 shadow-sm">
+      <h3 class="h5 mb-3">Analyser les objectifs et les modalités d'organisation d'un projet</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du projet funEnBulle, nous avons reçu deux documents : un cahier des charges et une présentation du projet. <br><br>
+        Nous avons alors pu analyser l'état des lieux et définir un objectif de réalisation à partir d'une liste d'évolution potentielle.<br><br>
+        <%= image_tag "objectifFunEnBulle", alt: "objectifFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Planifier les activités -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Planifier les activités</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Suite à l'étape d'analyse des objectifs, nous avons pu définir des objectifs et proposer un projet de réalisation. <br><br>
+        Ce dernier fait office de plan général et nous nous référons à lui dans le processus de réalisation. <br><br>
+        <%= image_tag "objectifClient", alt: "objectifClient", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %> 
+        <%= image_tag "projetRealisationAdmin", alt: "projetRealisationAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Évaluer les indicateurs de suivi d'un projet et analyser les écarts -->
+    <div class="mb-5 border rounded p-4 shadow-sm">
+      <h3 class="h5 mb-3">Évaluer les indicateurs de suivi d'un projet et analyser les écarts</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        L'ensemble des modifications apportées au projet sont suivies et notées chaque jour où je travaille dessus. <br><br>
+        Le suivi des modifications implique la présence d'un plan général, un plan quotidien et un bilan quotidien de la réalisation ou non des objectifs fixés pour la journée. <br><br> 
+        <%= image_tag "preuvePrevisionFunEnBulle", alt: "preuvePrevisionFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "tableauSuiviProjet", alt: "tableauSuiviProjet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "sommaire", alt: "sommaire", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+    <!-- Environnement d'apprentissage -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Mettre en place son environnement d'apprentissage personnel</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+        <p>
+        Afin de réaliser l'évolution de ce site j'ai exploité de nombreuses ressources pédagogique et des ressources en ligne. <br>
+        J'ai pu me servir des nombreuses leçon étudiée au cours de l'année ainsi que de resssources fourni par notre enseignante <br>
+        J'ai également utilisé la documentation officielle de PhpStorm, codeIgniter et MySQL pour approfondir mes connaissances : <br>
+        <a href="https://www.jetbrains.com/help/phpstorm/getting-started.html" target="_blank">Documentation PhpStorm</a> <br>
+        <a href="https://codeigniter.com/userguide3/" target="_blank">Documentation CodeIgniter</a> <br>
+        <a href="https://dev.mysql.com/doc/refman/8.4/en/" target="_blank">Documentation MySQL</a> <br>
+        <a href="https://sql.sh/" target="_blank">Apprendre le SQL</a> <br>
+        Je me suis également servi d'un site de documentation css pour m'aider à modifier le design du site : <br>
+        <a href="https://www.w3schools.com/CSSref/index.php" target="_blank">Documentation CSS</a> <br>
+        </p>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+

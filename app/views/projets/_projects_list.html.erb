@@ -1,0 +1,26 @@
+<% projets.each do |projet| %>
+  <div class="col-md-6 mb-4"> <!-- Colonne de 6 sur 12 pour chaque carte + marge en bas -->
+        <div class="card h-100 d-flex flex-column"> <!-- h-100 + flex pour aligner en bas -->
+          <%= image_tag projet.image, class: 'card-img-top', alt: projet.title %>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= projet.title %></h5>
+            <h6><p class="fw-lighter"><%= projet.projet_type %> | <%= projet.dateStart.year %> - <%= projet.dateEnd.year %></p></h6>
+            <p class="card-text">
+              <%= projet.description %>
+            </p>
+            <div class="competence-badges" style="margin-bottom: 16px;">
+              <% projet.competences.each do |competence| %>
+              <span class="badge badge-secondary"><%= competence.title %></span>
+              <% end %>
+            </div>
+            <div class="mt-auto"> <!-- mt-auto pour pousser les liens vers le bas -->
+              <a href="/projets/show/<%= projet.id %>" class="card-link">En savoir plus</a>
+              <% if session[:admin] %>
+                <a href="<%= edit_projet_path(projet.id) %>" class="btn btn-success">Editer le projet</a>
+                <a href="<%= projet_path(projet.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer le projet</a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>

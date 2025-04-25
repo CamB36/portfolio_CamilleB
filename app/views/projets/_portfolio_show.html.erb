@@ -1,0 +1,124 @@
+<div class="container-fluid mt-0"> <!-- Réduire ou supprimer la marge en haut -->
+  <!-- Titre "Formation" -->
+  <div class="row mb-5 mt-0"> <!-- Ligne pour le titre -->
+    <div class="col text-center"> <!-- Colonne centrée -->
+      <h1 class="display-4 header-title">Épreuve E5 : Portfolio dynamique</h1> <!-- Titre principal -->
+      <p class="lead text-muted">Le but de l’épreuve E5 est de présenter la formation du BTS, son parcours et les compétences acquise lors de cette dernière sous la forme d'un portfolio </p>
+    </div>
+  </div>
+
+<!-- Intégration du PDF scrollable -->
+<div class="row mb-5">
+  <div class="col text-center">
+    <h2 class="mb-4">Document de présentation</h2>
+    <div style="height: 700px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <iframe src="/documents/5#toolbar=1&navpanes=0&scrollbar=1" 
+              width="100%" 
+              height="100%" 
+              style="border: none;">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Intégration du tableau de compétence -->
+<div class="row mb-5">
+  <div class="col text-center">
+    <h2 class="mb-4">Tableau de compétence</h2>
+    <div>
+      <%= image_tag "TableauPortfolio", class: "card-img", alt: "Tableau de compétences Portfolio" %>
+    </div>
+  </div>
+</div>
+
+<!-- Preuves de compétences statiques -->
+<div class="row mb-5">
+  <div class="col">
+
+    <!-- Exploiter référentiel et norme -->
+<div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+  <h3 class="h5 mb-3">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</h3>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+  </div>
+  <p>
+    Dans le cadre du développement de ce portfolio, j’ai été amené à respecter les normes et standards imposés par le framework Ruby on Rails.<br><br>
+    Ruby on Rails repose sur une architecture MVC (Model-View-Controller). J’ai donc pu réemployer les compétences acquises lors de ma formation afin d'organiser les fichiers et les responsabilités du code selon cette logique. <br><br>
+    J’ai également respecté les conventions de nommage imposées par Rails, que ce soit pour les fichiers, les classes ou les méthodes. Cela garantit une bonne intégration avec les outils automatiques du framework, et un comportement prévisible du code. <br><br>
+    L’utilisation de routes RESTful m’a permis de mettre en place une navigation cohérente, lisible et conforme aux bonnes pratiques du web. J’ai aussi structuré la base de données de manière normalisée pour éviter les redondances et assurer l’intégrité des données. <br><br>
+    Enfin, j’ai intégré Bootstrap pour appliquer des normes d’ergonomie et de responsive design.<br><br>
+    L’ensemble de ces éléments m’a permis de produire un code conforme aux exigences du métier, en m’appuyant sur des référentiels techniques largement adoptés par les prestataires informatiques.
+  </p>
+  <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "controleur", alt: "Controlleur RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "model", alt: "Model RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "routes", alt: "Routes RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        </div>
+</div>
+    
+    <!-- Environnement d'apprentissage -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Mettre en place son environnement d'apprentissage personnel</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+        <p>
+        Afin de réaliser ce site j'ai exploité de nombreuses ressources en ligne. <br>
+        Une formation à ruby on rails recommandé par mon responsable de stage m'a permis de découvrir le framework et de me familiariser avec son fonctionnement : <br>
+        <a href="https://grafikart.fr/formations/ruby-on-rails" target="_blank">Apprendre Ruby on Rails - Grafikart</a> <br>
+        J'ai également utilisé la documentation officielle de ruby on rails et son API pour approfondir mes connaissances : <br>
+        <a href="https://guides.rubyonrails.org/" target="_blank">Documentation Ruby on Rails</a> <br>
+        <a href="https://api.rubyonrails.org/" target="_blank">API Ruby on Rails</a> <br>
+        Je me suis également servi de la documentation de bootstrap et de css pour m'aider à mettre en place le design du site : <br>
+        <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">Documentation Bootstrap</a> <br>
+        <a href="https://www.w3schools.com/CSSref/index.php" target="_blank">Documentation CSS</a> <br>
+        </p>
+    </div>
+
+    <!-- Gérer des sauvegardes -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Gérer des sauvegardes</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre du portfolio, afin d'avoir constamment une version fonctionnelle de l'application, un système de sauvegarde est mis en place. <br><br>
+        Travaillant de manière individuelle, je n'ai pas ressenti le besoin d'utiliser Git pour versionner mon code. <br><br>
+        J'utilise un système de dossier de sauvegarde sur mon ordinateur, où je dépose les fichiers de l'application à chaque fois que je fais une modification importante. <br><br>
+        Les dossiers sont triés par date et les fichiers sont nommés de manière à ce que je puisse facilement retrouver la version que je cherche. </p>
+        <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "portfolioVersions", alt: "Dossier répertoriant les versions quotidiennes", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "portfolioVersions2", alt: "Intérieur d'un dossier, contient les fichiers zip du projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        </div>
+    </div>
+
+    <!-- Respect des règles -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Vérifier le respect des règles d'utilisation des resssources numériques</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Lors du développement de mon site portfolio, j’ai pris soin de respecter les règles d’utilisation des ressources numériques. 
+        Toutes les images utilisées sont libres de droits (Unsplash), les bibliothèques utilisées sont open source (Bootstrap, Rails), et les données affichées ne portent pas atteinte à la vie privée. 
+        Un fichier de crédits est disponible pour lister l’ensemble des sources et licences utilisées. </p>
+        <%= link_to "Crédits", "/credits", class: "nav-link" %>
+    </div>
+
+    <!-- Évaluer les indicateurs de suivi d'un projet et analyser les écarts -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Mettre en place son environnement d'apprentissage personnel</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Dans le cadre de ce portfolio, j’ai organisé mon environnement personnel en installant et configurant les outils nécessaires au développement Rails, 
+        incluant un éditeur de code (Visual Studio Code), une base de données (PostgreSQL, visualisation avec DBVisualizer) et un outil de déploiement. Mon environnement me permet de tester, corriger et faire évoluer mes projets en autonomie. <br><br>
+        J'utilise les documentations rails et sql et la formation fournie lors de mon stage afin de m'aider à comprendre plus en profondeur les outils et les langages que j'utilise. <br><br>
+        J'utilise Word pour la rédaction de mes documents de suivis et de mes rapports. <br><br>
+      </p>
+      <%= image_tag "preuveInstallRuby", alt: "preuveRuby", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "DBVisualizer", alt: "DBVisualizer", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "VSCode", alt: "VSCode", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+    </div>
+  </div>
+</div>
+</div>
+
+
+

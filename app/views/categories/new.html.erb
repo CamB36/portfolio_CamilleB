@@ -1,0 +1,21 @@
+<!-- app/views/categories/new.html.erb -->
+<h1>Ajouter une nouvelle catégorie</h1>
+
+<%= form_with model: @category, url: categories_path do |form| %>
+  <div class="form-group">
+    <%= form.label :id, "ID de la catégorie" %>
+    <%= form.number_field :id, class: "form-control" %> <!-- Champ pour l'ID -->
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title, "Nom de la catégorie" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, "Description" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Créer la catégorie", class: "btn btn-primary" %>
+<% end %>

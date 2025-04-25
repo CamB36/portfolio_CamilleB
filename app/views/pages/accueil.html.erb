@@ -1,0 +1,93 @@
+<div class="container-fluid ">
+
+<!-- Section Présentation (complétée) -->
+<div class="row align-items-center mb-5">
+  <div class="col-md-8">
+    <h1 class="display-4 mb-3">Camille Boiché</h1>
+    <p class="lead">Étudiant en 2ème année de BTS SIO</p>
+    <p>
+      Passionné par la recherche et la réalisation de projet web et objet, je poursuis actuellement mes études en BTS Services Informatiques aux Organisations, spécialité SLAM (Solutions Logicielles et Applications Métiers).
+    </p>
+    <p>
+      Curieux, autonome et rigoureux, je suis en quête d'opportunités pour mettre mes compétences en pratique dans des projets concrets, tant en développement back-end que front-end. J’ai pu approfondir mes connaissances grâce à plusieurs stages et projets scolaires.
+    </p>
+    <p>
+      Mon objectif est de poursuivre dans le développement d’applications web et objet, tout en restant à l’écoute des évolutions technologiques.
+    </p>
+    <p>
+      <%= link_to "LinkedIn", "https://www.linkedin.com/in/camille-boiché-141259297", class: "btn btn-outline-secondary me-2", target: "_blank" %>
+      <%= link_to "GitHub",   "https://github.com/CamB36", class: "btn btn-outline-secondary", target: "_blank" %>
+      <a href="/documents/cv" class="btn btn-outline-secondary" target="_blank">Mon CV</a>
+    </p>
+  </div>
+</div>
+
+
+  <!-- Section Formations -->
+<h2 class="h3 mb-3 sous-titre">Mes formations</h2>
+<div class="d-flex overflow-auto mb-3">
+  <% @formations.each do |formation| %>
+    <div class="me-custom text-center upEffect" style="min-width: 180px;">
+      <%= link_to((formation.id == 2 ? "/formations/2" : formation.link), class: "d-block item-card shadow-sm", rel: "noopener noreferrer", target: "_blank") do %>
+        <%= image_tag formation.picture, class: "card-img-top rounded", alt: formation.title, style: "height: 120px; object-fit: contain;" %>
+
+      <% end %>
+      <div class="item-text mt-2">
+        <h5 class="mb-1"><%= formation.title %></h5>
+        <p class="small text-muted mb-0"><%= formation.date.year %> – <%= formation.endDate.year %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+  <!-- Section Expériences -->
+  <h2 class="h3 mb-3 sous-titre">Mes expériences</h2>
+  <div class="d-flex overflow-auto mb-3">
+    <% @experiences.each do |exp| %>
+      <div class="me-custom upEffect">
+        <%= link_to exp.link, class: "d-block item-card shadow-sm", target: "_blank" do %>
+          <%= image_tag exp.picture, class: "card-img-top rounded", alt: exp.company, style: "background:#fff; height: 120px; object-fit: contain;" %>
+
+        <% end %>
+        <div class="item-text">
+          <h5 class="mb-1"><%= exp.company %></h5>
+          <p class="small text-muted mb-0">
+            <% if exp.date.year != exp.endDate.year %>
+              <%= exp.date.year %> – <%= exp.endDate.year %>
+            <% else %>
+              <%= l(exp.date, format: "%B") %> <%= exp.date.year %> – <%= l(exp.endDate, format: "%B") %> <%= exp.endDate.year %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Section Projets -->
+<h2 class="h3 mb-3 sous-titre">Mes projets</h2>
+<div class="d-flex overflow-auto">
+  <% @projets.each do |projet| %>
+    <div class="me-custom upEffect">
+      <%= link_to projet_path(projet), class: "d-block item-card shadow-sm" do %>
+        <%= image_tag projet.image, class: "card-img-top rounded", alt: projet.title, style: "height: 120px; object-fit: contain;" %>
+
+      <% end %>
+      
+      <div class="item-text">
+        <h5 class="mb-1"><%= projet.title %></h5>
+        <p class="small text-muted mb-1"><%= projet.dateStart.year %></p>
+        
+        <!-- Compétences -->
+        <div class="competence-badges mt-1">
+          <% projet.competences.each do |competence| %>
+            <span class="badge badge-secondary me-1 mb-1"><%= competence.title %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+</div>

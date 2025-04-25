@@ -1,0 +1,45 @@
+<div class="container-fluid mt-0"> <!-- Réduire ou supprimer la marge en haut -->
+  <!-- Titre "Formation" -->
+  <div class="row mb-5 mt-0"> <!-- Ligne pour le titre -->
+    <div class="col text-center"> <!-- Colonne centrée -->
+      <h1 class="display-4 header-title">Mes formations</h1> <!-- Titre principal -->
+    </div>
+  </div>
+
+  <!-- Cartes de formation -->
+  <div class="row g-4"> <!-- Utilisation de la grille Bootstrap avec espacement (g-4) -->
+    <% @formations.each do |formation| %> <!-- Boucle autour des colonnes -->
+      <!-- Carte de formation -->
+      <div class="col-md-6 mb-4"> <!-- Colonne de 6 sur 12 pour chaque carte + marge en bas -->
+        <div class="card card-img-top h-100 d-flex flex-column upEffect"> <!-- h-100 + flex pour aligner en bas -->
+          <%= image_tag formation.picture, class: 'card-img-top', alt: formation.title %>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= formation.title %></h5>
+            <h6><p class="fw-lighter"><%= formation.ecole %> | <%= formation.date.year %> - <%= formation.endDate.year %></p></h6>
+            <p class="card-text">
+              <%= formation.description %>
+            </p>
+            <div class="mt-auto"> <!-- mt-auto pour pousser les liens vers le bas -->
+              <% if formation.id == 2 %>
+                <a href="/formations/2" class="card-link" target="_blank" rel="noopener noreferrer">En savoir plus</a>  
+              <% else %>
+                <a href="<%= formation.link %>" class="card-link" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+              <% end %>
+              <% if session[:admin] %>
+                <a href="<%= edit_formation_path(formation.id) %>" class="btn btn-success">Editer la formation</a>
+                <a href="<%= formation_path(formation.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer l'article</a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %> <!-- Fin de la boucle -->
+  </div> <!-- Fin de la ligne -->
+
+  <!-- Bouton "Ajouter une nouvelle formation" -->
+  <p class="mt-4">
+    <% if session[:admin] %>
+      <a href="<%= new_formation_path %>" class="btn btn-success">Ajouter une nouvelle formation</a>
+    <% end %>
+  </p>
+</div>

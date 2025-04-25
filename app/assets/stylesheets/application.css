@@ -1,0 +1,348 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* Coriander */
+/* Définir les couleurs */
+:root {
+  --coriander-50: #f4f6ef;
+  --coriander-100: #e6ebdc;
+  --coriander-200: #d0d9bd;
+  --coriander-300: #c0cca8;
+  --coriander-400: #96a972;
+  --coriander-500: #798d55;
+  --coriander-600: #5e6f41;
+  --coriander-700: #495635;
+  --coriander-800: #3d462e;
+  --coriander-900: #353d2a;
+  --coriander-950: #1a2013;
+
+  --background: #FFFDF2;
+  --sidebar: #607274;
+  --sidebarText: #FFFDF2;
+  --sidebarHover: #fef6c7;
+}
+
+/* Utiliser les couleurs dans des classes */
+.bg-coriander-50 {
+  background-color: var(--coriander-50);
+}
+
+.text-coriander-500 {
+  color: var(--coriander-500);
+}
+
+.border-coriander-300 {
+  border-color: var(--coriander-300);
+}
+
+/* Saratoga */
+/* Définir les couleurs Saratoga */
+:root {
+  --saratoga-50: #f8faeb;
+  --saratoga-100: #f0f3d4;
+  --saratoga-200: #e1e8ae;
+  --saratoga-300: #ccd87e;
+  --saratoga-400: #b4c556;
+  --saratoga-500: #97aa38;
+  --saratoga-600: #758729;
+  --saratoga-700: #546121;
+  --saratoga-800: #485321;
+  --saratoga-900: #3e4720;
+  --saratoga-950: #20260d;
+}
+
+/* Utiliser les couleurs dans des classes */
+.bg-saratoga-500 {
+  background-color: var(--saratoga-500);
+}
+
+.text-saratoga-50 {
+  color: var(--saratoga-50);
+}
+
+.border-saratoga-300 {
+  border-color: var(--saratoga-300);
+}
+
+.bg-saratoga-200 {
+  background-color: var(--saratoga-200);
+}
+
+.special-gothic-condensed-one-regular {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.header-title {
+  font-family: "Special Gothic Condensed One";
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px; /* ou la hauteur que vous souhaitez */
+  object-fit: fill; 
+}
+
+.competence-title {
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.list-group-item {
+    border-color: rgba(0,0,0,0.1);
+  }
+
+.upEffect {
+    transition: transform 0.3s;
+  }
+.upEffect:hover {
+    transform: translateY(-5px);
+  }
+
+  .sidebar  {
+    min-height: 100vh;
+    width: 271px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar);
+    padding-top: 60px;
+  }
+  .sidebar * {
+    color: var(--sidebarText) !important;
+  }
+
+  .sidebar .nav-link.active {
+    background-color: #495057;
+  }
+
+  .sidebar .nav-link:hover {
+    color: #fef6c7 !important; 
+  }
+  
+
+  .sidebar .nav-item:has(.dropdown-toggle) {
+    border-bottom: 1px solid black !important; /* Bordure noire */
+    padding-bottom: 16px; /* Pour matcher le padding de ta navbar */ /* Couleur du texte */
+}
+
+.sidebar-brand {
+  font-size: 2rem; /* = h4 par défaut */
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  display: block;
+  font-family: "Special Gothic Condensed One", sans-serif;
+}
+
+  .content {
+    margin-top: 70px; /* Compenser la hauteur de la navbar */
+    margin-left: 250px;
+    padding: 20px;
+    background-color: var(--background);
+}
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .content {
+      margin-left: 0;
+    }
+    
+  }
+
+  .navbar-top {
+    position: fixed; 
+    top: 0;
+    left: 271px; /* = largeur de ta sidebar (271px et non 300px) */
+    right: 0;
+    z-index: 1050;
+    width: calc(100% - 271px); /* Ajusté pour match la sidebar */
+    height: 70px;
+    border-bottom: 1px solid black !important; 
+    background-color: var(--background) !important;  
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  margin-left: 271px; /* Doit correspondre à la largeur de ta sidebar */
+  width: calc(100% - 271px); /* Calcule la largeur restante */
+  padding: 1rem;
+  background-color: var(--background); /* Même fond que ton content */
+  border-top: 1px solid black !important; /* Bordure cohérente avec ta navbar */
+}
+
+@media (max-width: 768px) {
+  footer {
+      margin-left: 0;
+      width: 100%;
+  }
+}
+
+footer ul.nav {
+  padding-left: 0; /* Supprime tout décalage résiduel */
+  justify-content: center !important; /* Force le centrage */
+}
+
+footer p.text-center {
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* page Acceuil */
+.item-card {
+  width: 180px;
+  flex: 0 0 auto;
+}
+
+.item-card img {
+  height: 120px;
+  object-fit: cover;
+}
+.item-text {
+  width: 180px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.me-custom {
+  margin-right: 2.125rem;
+}
+
+.sous-titre {
+  font-family: "Special Gothic Condensed One";
+  font-size: 2rem;
+}
+
+.sous-titre-sidebar {
+  font-family: "Special Gothic Condensed One";
+  font-size: 1.5rem;
+}
+
+html {
+  scroll-padding-top: 80px; /* adapte selon la hauteur de ta navbar */
+}
+
+.sidebar .dropdown-menu-dark .dropdown-item {
+  color: black !important;
+}
+
+h1 {
+  font-family: "Special Gothic Condensed One";
+}
+
+.card-header.bg-primary {
+  background-color: #faeed1!important; /* exemple : ta couleur sidebar */
+  color: black !important; /* exemple : couleur de texte */
+}
+.card.border-primary {
+  border-color: #faeed1 !important; /* ou var(--sidebar), par exemple */
+}
+
+.card-header.bg-success {
+  background-color: #f6dfb2 !important; 
+  color: black !important;
+}
+.card.border-success {
+  border-color: #f6dfb2 !important; /* ou var(--sidebar), par exemple */
+}
+
+.card-header.bg-info {
+  background-color: #f0c981 !important; 
+  color: black !important; 
+}
+.card.border-info {
+  border-color: #f0c981 !important; /* ou var(--sidebar), par exemple */
+}
+
+.fa-calendar-alt {
+  color: #f6dfb2 !important; 
+}
+.fa-graduation-cap {
+  color: #f6dfb2 !important; 
+}
+.fa-briefcase {
+  color: #f6dfb2 !important; 
+}
+
+.fa-wifi {
+  color: #f0c981 !important; 
+}
+.fa-handshake {
+  color: #f0c981 !important; 
+}
+.fa-chalkboard-teacher {
+  color: #f0c981 !important; 
+}
+.btn-outline-success {
+  color: #f0c981 !important; 
+  border-color: #f0c981 !important; 
+}
+.btn-outline-success:hover {
+  background-color: #f0c981 !important; 
+  color: black !important; 
+}
+
+.fa-check-circle {
+  color: #e8a94f !important; 
+}
+
+.preuveCompetence {
+  border-color: #607274 !important; 
+}
+
+.category-card {
+  background-color: #faeed1 !important; 
+  border-color: #faeed1 !important;
+}
+.competence-card {
+  background-color: var(--background) !important; 
+  border-color: var(--background) !important;
+}
+
+.veille-card {
+  background-color: var(--background) !important; 
+  border-color: #607274 !important;
+}
+.text-success {
+  color: black !important; 
+}
+.list-group-item {
+  background-color: var(--background) !important; 
+  color: black !important; 
+}
+.alert-info {
+  background-color: #faeed1 !important; 
+  color: black !important; 
+  border-color: #faeed1 !important;
+}

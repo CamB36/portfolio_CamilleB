@@ -1,0 +1,11 @@
+<% if @projet.title == "FunEnBulle - Épreuve E6" %>
+  <%= render 'projets/funEnBulle_show', projet: @projet %>
+<% elsif @projet.title == "Portfolio - Épreuve E5 " %>
+  <%= render 'projets/portfolio_show', projet: @projet %>  
+<% else %>
+  <!-- Template générique pour les autres formations -->
+  <div class="container">
+    <h1><%= @projet.title %></h1>
+    <p><%= @projet.description %></p>
+  </div>
+<% end %>

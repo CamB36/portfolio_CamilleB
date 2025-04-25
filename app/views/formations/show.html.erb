@@ -1,0 +1,9 @@
+<% if @formation.title == "BTS SIO" %>
+  <%= render 'formations/bts_sio_show', formation: @formation %>
+<% else %>
+  <!-- Template générique pour les autres formations -->
+  <div class="container">
+    <h1><%= @formation.nom %></h1>
+    <p><%= @formation.description %></p>
+  </div>
+<% end %>
