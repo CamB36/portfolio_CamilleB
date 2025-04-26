@@ -18,7 +18,7 @@
             <div class="col-md-4 upEffect" style="margin-bottom: 16px;">
               <div class="p-3 border rounded d-flex flex-column align-items-center text-center shadow-sm bg-white competence-card">
                 <% if competence.logo.present? %>
-                  <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 70px; object-fit: contain;" %>
+                  <%= image_tag "#{competence.logo}#{File.extname(competence.logo)}", alt: competence.title, class: "img-fluid", style: "max-height: 70px; object-fit: contain;" %>
                 <% else %>
                   <i class="bi bi-check-circle-fill text-success fs-4"></i>
                 <% end %>
@@ -138,12 +138,21 @@
       </div>
       <p>
         Dans le cadre du portfolio, afin d'avoir constamment une version fonctionnelle de l'application, un système de sauvegarde est mis en place. <br><br>
-        Travaillant de manière individuelle, je n'ai pas ressenti le besoin d'utiliser Git pour versionner mon code. <br><br>
         J'utilise un système de dossier de sauvegarde sur mon ordinateur, où je dépose les fichiers de l'application à chaque fois que je fais une modification importante. <br><br>
         Les dossiers sont triés par date et les fichiers sont nommés de manière à ce que je puisse facilement retrouver la version que je cherche. </p>
         <div class="d-flex flex-wrap justify-content-center mb-3">
         <%= image_tag "portfolioVersions.png", alt: "Dossier répertoriant les versions quotidiennes", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
         <%= image_tag "portfolioVersions2.png", alt: "Intérieur d'un dossier, contient les fichiers zip du projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        </div>
+        <p>
+        J'utilise GitHub pour héberger mon code et effectuer des sauvegardes régulières. <br><br>
+        J'ai également mis en place un système de versioning avec Git, qui me permet de suivre les modifications apportées à mon code et de revenir à une version antérieure si nécessaire. <br><br>
+        Je met ainsi à jour mon dépôt GitHub chaque fois que je fais une modification importante sur le code avec la fonctionnalités commit. <br><br>
+        </p>
+        <div class="d-flex flex-wrap justify-content-center mb-3">
+        <%= image_tag "gitApp.png", alt: "Git App", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "gitCommits.png", alt: "Git Commits", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "gitPortfoliop.png", alt: "Git Portfolio", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
         </div>
     </div>
 
@@ -243,6 +252,29 @@
         <%= image_tag "preuvePrevisionFunEnBulle.png", alt: "preuvePrevisionFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
         <%= image_tag "tableauSuiviProjet.png", alt: "tableauSuiviProjet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
         <%= image_tag "sommaire.png", alt: "sommaire", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      </p>
+    </div>
+
+<!-- Mettre à disposition des utilisateurs un service informatique -->
+<div class="row mb-5 mt-0">
+    <div class="col text-center">
+      <h3 class="display-4 header-title" id="devPro">Mettre à disposition des utilisateurs un service informatique</h2>
+    </div>
+  </div>
+  <!-- Évaluer les indicateurs de suivi d'un projet et analyser les écarts -->
+    <div class="mb-5 border rounded p-4 shadow-sm preuveCompetence">
+      <h3 class="h5 mb-3">Déployer un service</h3>
+      <div class="d-flex flex-wrap justify-content-center mb-3">
+      </div>
+      <p>
+        Mon portfolio a été déployé via le service d'hébergement Render. 
+        J'ai utilisé le service de déploiement automatique, qui me permet de déployer automatiquement mon application à chaque fois que je pousse une modification sur mon dépôt GitHub. <br><br>
+        Render offre un service d'hébergement gratuit pour les applications Ruby on Rails, ce qui me permet de déployer mon application gratuit dans un premier temps afin de tester le fonctionnement global de mon site. <br><br>
+        Le service payant donne accès à des fonctionnalités avancées, telles que l'accès au shell qui me permet de gérer ma base de données et d'effectuer des migrations. <br><br>
+        J'envisage ensuite d'acquerir un nom de domaine pour mon portfolio afin de le rendre plus professionnel et d'améliorer sa visibilité. <br><br>
+        <%= image_tag "RenderProjet.png", alt: "Render Projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "RenderUpdate.png", alt: "Render Update", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "UrlSite.png", alt: "UrlSite", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
       </p>
     </div>
 
