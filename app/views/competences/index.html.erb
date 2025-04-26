@@ -57,13 +57,13 @@
     </div>
   <% end %>
 
-  <div class="row mb-5 mt-0">
+    <div class="row mb-5 mt-0">
     <div class="col text-center">
       <h2 class="display-4 header-title">Tableau de compétences</h2>
     </div>
   </div>
   <div class="card mb-5">
-    <%= image_tag "tableauComp.png", class: "card-img", alt: "Tableau de compétences" %>
+    <%= image_tag "tableauComp.png", class: "card-img img-fluid lightbox-image", alt: "Tableau de compétences", style: "cursor: pointer;" %>
   </div>  
 </div>
 
@@ -86,9 +86,9 @@
         Je me suis également servi de la documentation de MySQL et de phpMyAdmin pour m'aider à mettre en place la base de donnée du projet. <br><br>
          </p>
         <div class="d-flex flex-wrap justify-content-center mb-3">
-        <%= image_tag "ConfigurationPHPSTORM.png", alt: "ConfigurationPHPSTORM", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
-        <%= image_tag "PHPmyAdmin.png", alt: "PHPmyAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
-        <%= image_tag "Wamp.png", alt: "Wamp", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "ConfigurationPHPSTORM.png", alt: "ConfigurationPHPSTORM", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "PHPmyAdmin.png", alt: "PHPmyAdmin", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "Wamp.png", alt: "Wamp", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
         </div>
     </div>
 
@@ -98,17 +98,17 @@
   <div class="d-flex flex-wrap justify-content-center mb-3">
   </div>
   <p>
-    Dans le cadre du développement de ce portfolio, j’ai été amené à respecter les normes et standards imposés par le framework Ruby on Rails.<br><br>
-    Ruby on Rails repose sur une architecture MVC (Model-View-Controller). J’ai donc pu réemployer les compétences acquises lors de ma formation afin d'organiser les fichiers et les responsabilités du code selon cette logique. <br><br>
-    J’ai également respecté les conventions de nommage imposées par Rails, que ce soit pour les fichiers, les classes ou les méthodes. Cela garantit une bonne intégration avec les outils automatiques du framework, et un comportement prévisible du code. <br><br>
-    L’utilisation de routes RESTful m’a permis de mettre en place une navigation cohérente, lisible et conforme aux bonnes pratiques du web. J’ai aussi structuré la base de données de manière normalisée pour éviter les redondances et assurer l’intégrité des données. <br><br>
-    Enfin, j’ai intégré Bootstrap pour appliquer des normes d’ergonomie et de responsive design.<br><br>
-    L’ensemble de ces éléments m’a permis de produire un code conforme aux exigences du métier, en m’appuyant sur des référentiels techniques largement adoptés par les prestataires informatiques.
+    Dans le cadre du développement de ce portfolio, j'ai été amené à respecter les normes et standards imposés par le framework Ruby on Rails.<br><br>
+    Ruby on Rails repose sur une architecture MVC (Model-View-Controller). J'ai donc pu réemployer les compétences acquises lors de ma formation afin d'organiser les fichiers et les responsabilités du code selon cette logique. <br><br>
+    J'ai également respecté les conventions de nommage imposées par Rails, que ce soit pour les fichiers, les classes ou les méthodes. Cela garantit une bonne intégration avec les outils automatiques du framework, et un comportement prévisible du code. <br><br>
+    L'utilisation de routes RESTful m'a permis de mettre en place une navigation cohérente, lisible et conforme aux bonnes pratiques du web. J'ai aussi structuré la base de données de manière normalisée pour éviter les redondances et assurer l'intégrité des données. <br><br>
+    Enfin, j'ai intégré Bootstrap pour appliquer des normes d'ergonomie et de responsive design.<br><br>
+    L'ensemble de ces éléments m'a permis de produire un code conforme aux exigences du métier, en m'appuyant sur des référentiels techniques largement adoptés par les prestataires informatiques.
   </p>
   <div class="d-flex flex-wrap justify-content-center mb-3">
-        <%= image_tag "controleur.png", alt: "Controlleur RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
-        <%= image_tag "model.png", alt: "Model RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
-        <%= image_tag "routes.png", alt: "Routes RubyOnRails", class: "img-fluid rounded me-3 mb-3", style: "max-height: 250px; object-fit: contain;" %>
+        <%= image_tag "controleur.png", alt: "Controlleur RubyOnRails", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "model.png", alt: "Model RubyOnRails", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "routes.png", alt: "Routes RubyOnRails", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
         </div>
 </div>
 
@@ -121,17 +121,17 @@
     Dans le cadre du développement du projet funEnBulle, j'ai été amené à mettre en place des niveaux d'habilitation pour les utilisateurs de l'application. <br><br>
     Dans un premier temps, j'ai intégré un utilisateur selon les identifiants fournis par le client. <br>
     <div class="d-flex flex-wrap justify-content-center mb-3">
-      <%= image_tag "HabilitationFunEnBulle.png", alt: "HabilitationFunEnBulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+      <%= image_tag "HabilitationFunEnBulle.png", alt: "HabilitationFunEnBulle", class: "img-fluid rounded me-3 mb-3 mt-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
     </div>
     J'ai ensuite mis en place dans ma base de données une table "users" qui contient les informations de chaque utilisateur, y compris son rôle (admin ou utilisateur). <br><br>
     L'admin a la possibilité de créer, modifier et supprimer les données accessibles par le biais d'une interface réservée. <br>
     <div class="d-flex flex-wrap justify-content-center mb-3">
-      <%= image_tag "RoleUsersFunEnbulle.png", alt: "RoleUsersFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+      <%= image_tag "RoleUsersFunEnbulle.png", alt: "RoleUsersFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
     </div>
     J'ai également mis en place un système de vérification des habilitations lors de l'accès à certaines fonctionnalités de l'application. <br>
     Par exemple, seules les personnes ayant le rôle d'admin peuvent accéder à la page d'administration et effectuer des modifications sur les données. <br>
     <div class="d-flex flex-wrap justify-content-center mb-3">
-      <%= image_tag "FonctionCheckAdminFunEnbulle.png", alt: "FonctionCheckAdminFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3", style: "max-height: 250px; object-fit: contain;" %>
+      <%= image_tag "FonctionCheckAdminFunEnbulle.png", alt: "FonctionCheckAdminFunEnbulle", class: "img-fluid rounded me-3 mb-3 mt-3 lightbox-image", style: "max-height: 250px; object-fit: contain; cursor: pointer;" %>
     </div>
 </div>
 
@@ -145,8 +145,8 @@
         J'utilise un système de dossier de sauvegarde sur mon ordinateur, où je dépose les fichiers de l'application à chaque fois que je fais une modification importante. <br><br>
         Les dossiers sont triés par date et les fichiers sont nommés de manière à ce que je puisse facilement retrouver la version que je cherche. </p>
         <div class="d-flex flex-wrap justify-content-center mb-3">
-        <%= image_tag "portfolioVersions.png", alt: "Dossier répertoriant les versions quotidiennes", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "portfolioVersions2.png", alt: "Intérieur d'un dossier, contient les fichiers zip du projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "portfolioVersions.png", alt: "Dossier répertoriant les versions quotidiennes", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "portfolioVersions2.png", alt: "Intérieur d'un dossier, contient les fichiers zip du projet", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
         </div>
         <p>
         J'utilise GitHub pour héberger mon code et effectuer des sauvegardes régulières. <br><br>
@@ -154,9 +154,9 @@
         Je met ainsi à jour mon dépôt GitHub chaque fois que je fais une modification importante sur le code avec la fonctionnalités commit. <br><br>
         </p>
         <div class="d-flex flex-wrap justify-content-center mb-3">
-        <%= image_tag "gitApp.png", alt: "Git App", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "gitCommits.png", alt: "Git Commits", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "gitPortfolio.png", alt: "Git Portfolio", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "gitApp.png", alt: "Git App", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "gitCommits.png", alt: "Git Commits", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "gitPortfoliop.png", alt: "Git Portfolio", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
         </div>
     </div>
 
@@ -166,9 +166,9 @@
       <div class="d-flex flex-wrap justify-content-center mb-3">
       </div>
       <p>
-        Lors du développement de mon site portfolio, j’ai pris soin de respecter les règles d’utilisation des ressources numériques. 
+        Lors du développement de mon site portfolio, j'ai pris soin de respecter les règles d'utilisation des ressources numériques. 
         Toutes les images utilisées sont libres de droits (Unsplash), les bibliothèques utilisées sont open source (Bootstrap, Rails), et les données affichées ne portent pas atteinte à la vie privée. 
-        Un fichier de crédits est disponible pour lister l’ensemble des sources et licences utilisées. </p>
+        Un fichier de crédits est disponible pour lister l'ensemble des sources et licences utilisées. </p>
         <%= link_to "Crédits", "/credits", class: "nav-link" %>
     </div>
 
@@ -188,9 +188,9 @@
         Ce fichier contient une section réservée aux repérages des problèmes rencontrés, ainsi qu'une section de résolution des problèmes, explicitant le processus employé. <br><br>
         Le problème est classifié comme "Résolu" lorsque la solution a été mise en place et que le problème n'est plus présent. <br><br>
       </p>
-        <%= image_tag "problemeResolution.png", alt: "Probleme et sa résoltion", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "noteProblemeEtCorrection.png", alt: "Probleme suivi quotidien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-         <%= image_tag "ExigenceProbleme.png", alt: "Demande fiche problème", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "problemeResolution.png", alt: "Probleme et sa résoltion", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "noteProblemeEtCorrection.png", alt: "Probleme suivi quotidien", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+         <%= image_tag "ExigenceProbleme.png", alt: "Demande fiche problème", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
     </div>
 
   <!-- Développer la présence en ligne -->
@@ -206,12 +206,12 @@
       </div>
       <p>
         Dans le cadre de mon stage de deuxième année, j'ai été amené à faire évoluer certaines pages du CMS de l'entreprise. <br><br>
-        Ces évolutions ont été réalisées en RubyOnRails et on permit d'améliorer la visibilité et de faciliter la prise en mains des services proposés par l'entreprise. <br><br>
+        Ces évolutions ont été réalisées en RubyOnRails et on permis d'améliorer la visibilité et de faciliter la prise en mains des services proposés par l'entreprise. <br><br>
         Les évolutions on également été documenté dans un fichier de suivi. <br><br>
       </p>
-        <%= image_tag "StageObjectif.png", alt: "stage objectif", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "EvolutionStage.png", alt: "Evolution Stage", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-         <%= image_tag "stageEvolutionQuotidien.png", alt: "stageEvolutionQuotidien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "StageObjectif.png", alt: "stage objectif", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "EvolutionStage.png", alt: "Evolution Stage", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+         <%= image_tag "stageEvolutionQuotidien.png", alt: "stageEvolutionQuotidien", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
     </div>
 
  <!-- Travailler en mode projet -->
@@ -228,7 +228,7 @@
       <p>
         Dans le cadre du projet funEnBulle, nous avons reçu deux documents : un cahier des charges et une présentation du projet. <br><br>
         Nous avons alors pu analyser l'état des lieux et définir un objectif de réalisation à partir d'une liste d'évolution potentielle.<br><br>
-        <%= image_tag "objectifFunEnBulle.png", alt: "objectifFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "objectifFunEnBulle.png", alt: "objectifFunEnBulle", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
       </p>
     </div>
 
@@ -240,8 +240,8 @@
       <p>
         Suite à l'étape d'analyse des objectifs, nous avons pu définir des objectifs et proposer un projet de réalisation. <br><br>
         Ce dernier fait office de plan général et nous nous référons à lui dans le processus de réalisation. <br><br>
-        <%= image_tag "objectifClient.png", alt: "objectifClient", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %> 
-        <%= image_tag "projetRealisationAdmin.png", alt: "projetRealisationAdmin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "objectifClient.png", alt: "objectifClient", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %> 
+        <%= image_tag "projetRealisationAdmin.png", alt: "projetRealisationAdmin", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
       </p>
     </div>
 
@@ -253,9 +253,9 @@
       <p>
         L'ensemble des modifications apportées au projet sont suivies et notées chaque jour où je travaille dessus. <br><br>
         Le suivi des modifications implique la présence d'un plan général, un plan quotidien et un bilan quotidien de la réalisation ou non des objectifs fixés pour la journée. <br><br> 
-        <%= image_tag "preuvePrevisionFunEnBulle.png", alt: "preuvePrevisionFunEnBulle", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "tableauSuiviProjet.png", alt: "tableauSuiviProjet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "sommaire.png", alt: "sommaire", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "preuvePrevisionFunEnBulle.png", alt: "preuvePrevisionFunEnBulle", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "tableauSuiviProjet.png", alt: "tableauSuiviProjet", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "sommaire.png", alt: "sommaire", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
       </p>
     </div>
 
@@ -276,9 +276,9 @@
         Render offre un service d'hébergement gratuit pour les applications Ruby on Rails, ce qui me permet de déployer mon application gratuit dans un premier temps afin de tester le fonctionnement global de mon site. <br><br>
         Le service payant donne accès à des fonctionnalités avancées, telles que l'accès au shell qui me permet de gérer ma base de données et d'effectuer des migrations. <br><br>
         J'envisage ensuite d'acquerir un nom de domaine pour mon portfolio afin de le rendre plus professionnel et d'améliorer sa visibilité. <br><br>
-        <%= image_tag "RenderProjet.png", alt: "Render Projet", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "RenderUpdate.png", alt: "Render Update", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-        <%= image_tag "UrlSite.png", alt: "UrlSite", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+        <%= image_tag "RenderProjet.png", alt: "Render Projet", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "RenderUpdate.png", alt: "Render Update", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+        <%= image_tag "UrlSite.png", alt: "UrlSite", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
       </p>
     </div>
 
@@ -294,14 +294,14 @@
       <div class="d-flex flex-wrap justify-content-center mb-3">
       </div>
       <p>
-        Dans le cadre de ce portfolio, j’ai organisé mon environnement personnel en installant et configurant les outils nécessaires au développement Rails, 
+        Dans le cadre de ce portfolio, j'ai organisé mon environnement personnel en installant et configurant les outils nécessaires au développement Rails, 
         incluant un éditeur de code (Visual Studio Code), une base de données (PostgreSQL, visualisation avec DBVisualizer) et un outil de déploiement. Mon environnement me permet de tester, corriger et faire évoluer mes projets en autonomie. <br><br>
         J'utilise les documentations rails et sql et la formation fournie lors de mon stage afin de m'aider à comprendre plus en profondeur les outils et les langages que j'utilise. <br><br>
         J'utilise Word pour la rédaction de mes documents de suivis et de mes rapports. <br><br>
       </p>
-      <%= image_tag "preuveInstallRuby.png", alt: "preuveRuby", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-      <%= image_tag "DBVisualizer.png", alt: "DBVisualizer", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-      <%= image_tag "VSCode.png", alt: "VSCode", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "preuveInstallRuby.png", alt: "preuveRuby", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+      <%= image_tag "DBVisualizer.png", alt: "DBVisualizer", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+      <%= image_tag "VSCode.png", alt: "VSCode", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
     </div>
 
 <!-- Mettre en oeuvre des outils et des stratégies de veille informationnelle -->
@@ -325,9 +325,9 @@
         Il permet également d'afficher une page de contact et fourni les liens nécessaires vers mes réseaux sociaux professionnels ainsi que vers mon CV. <br><br>
         J'utilise mon vrai nom et mon prénom sur chacun de ces médiums afin de garantir la cohérence de mon identité professionnelle. 
       </p>
-      <%= image_tag "acceuilLien.png", alt: "acceuilLien", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-      <%= image_tag "Linkedin.png", alt: "Linkedin", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
-      <%= image_tag "github.png", alt: "github", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "acceuilLien.png", alt: "acceuilLien", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+      <%= image_tag "Linkedin.png", alt: "Linkedin", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
+      <%= image_tag "github.png", alt: "github", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
     </div>
 
 <!-- Suite Étude -->
@@ -341,5 +341,45 @@
         Je prévois l'année prochaine de continuer mes études au sein de l'école 42, une formation priorisant la réalisation de projet et le travail de groupe.
         Une occasion, je pense, de développer mes compétences autant en matière de développement que de travail en équipe tout en me rapprochant de l'emploi.<br><br>  
       </p>
-      <%= image_tag "42_logo.png", alt: "42_logo", class: "img-fluid rounded me-3 mb-3", style: "max-height: 180px; object-fit: contain;" %>
+      <%= image_tag "42_logo.png", alt: "42_logo", class: "img-fluid rounded me-3 mb-3 lightbox-image", style: "max-height: 180px; object-fit: contain; cursor: pointer;" %>
     </div>
+
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox">&times;</span>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Sélectionnez toutes les images avec la classe img-fluid (ou une classe spécifique)
+  const images = document.querySelectorAll('.img-fluid');
+  
+  // Créez la lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeLightbox = document.querySelector('.close-lightbox');
+  
+  // Ajoutez un événement click à chaque image
+  images.forEach(image => {
+    image.addEventListener('click', function() {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = this.src;
+      lightboxImg.alt = this.alt;
+    });
+  });
+  
+  // Fermez la lightbox quand on clique sur la croix
+  closeLightbox.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+  });
+  
+  // Fermez la lightbox quand on clique en dehors de l'image
+  lightbox.addEventListener('click', function(e) {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = 'none';
+    }
+  });
+});
+</script>
