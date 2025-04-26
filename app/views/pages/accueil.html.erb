@@ -28,7 +28,7 @@
 <div class="d-flex overflow-auto mb-3">
   <% @formations.each do |formation| %>
     <div class="me-custom text-center upEffect" style="min-width: 180px;">
-      <%= link_to((formation.id == 2 ? "/formations/2" : formation.link), class: "d-block item-card shadow-sm", rel: "noopener noreferrer", target: "_blank") do %>
+      <%= link_to((formation.id == 2 ? "/formations/2" : formation.link), class: "d-block item-card shadow-sm", rel: "noopener noreferrer") do %>
         <%= image_tag formation.picture, class: "card-img-top rounded", alt: formation.title, style: "height: 120px; object-fit: contain;" %>
 
       <% end %>
