@@ -8,48 +8,117 @@
   </div>
 
   <!-- Cartes de compétences par catégories -->
-  <div class="row justify-content-center mb-5">
-    <% @categories.each do |category| %>
-      <div class="col-md-5 m-3 p-4 border rounded shadow-sm bg-light category-card">
-        <h2 class="text-center fw-bold mb-3"><%= category.title %></h2>
-        
-        <div class="row gx-3 gy-3">
-          <% category.competences.each do |competence| %>
-            <div class="col-md-4 upEffect" style="margin-bottom: 16px;">
-              <div class="p-3 border rounded d-flex flex-column align-items-center text-center shadow-sm bg-white competence-card">
-                <% if competence.logo.present? %>
-                  <% if competence.logo.include?('.') %>
-                    <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 70px; object-fit: contain;" %>
-                  <% else %>
-                    <%= image_tag url_for(competence.logo), alt: competence.title, class: "img-fluid", style: "max-height: 70px; object-fit: contain;" %>
-                  <% end %>
-                <% else %>
-                  <i class="bi bi-check-circle-fill text-success fs-4"></i>
-                <% end %>
-                <% if competence.useTitle == true %>
-                  <h3 class="mt-2 fw-semibold competence-title"><%= competence.title %></h3>
-                <% end %>
-                <% if competence.projets.any? %>
-                  <%= link_to "Voir les projets", 
-                  projets_path(filter: {competence_ids: [competence.id]}, highlight: competence.id), 
-                  class: "btn btn-link btn-sm mt-2" %>
-                <% end %>
-              </div>
-              <% if session[:admin] %>
-                  <div class="mt-2">
-                    <a href="<%= edit_competence_path(competence.id) %>" class="btn btn-success btn-sm">Editer</a>
-                    <a href="<%= competence_path(competence.id) %>" 
-                       class="btn btn-danger btn-sm" 
-                       data-confirm="Êtes-vous sûr ?" 
-                       data-method="DELETE">Supprimer</a>
+<div class="row justify-content-center mb-5">
+  <% @categories.each do |category| %>
+    <div class="col-md-5 m-3 p-4 border rounded shadow-sm bg-light category-card">
+      <h2 class="text-center fw-bold mb-3"><%= category.title %></h2>
+      
+      <div class="row gx-3 gy-3">
+        <% category.competences.each do |competence| %>
+          <% if competence.projets.any? %>
+            <div class="col-md-4 upEffect mb-3">
+              <% if competence.projets.any? %>
+                <%= link_to projets_path(filter: {competence_ids: [competence.id]}), class: "text-decoration-none" do %>
+                  <div class="p-3 border rounded text-center shadow-sm bg-white" style="width: 100%; aspect-ratio: 1/1;">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 70%;">
+                      <% if competence.logo.present? %>
+                        <% if competence.logo.include?('.') %>
+                          <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                        <% else %>
+                          <%= image_tag url_for(competence.logo), alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                        <% end %>
+                      <% else %>
+                        <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                      <% end %>
+                    </div>
+                    <% if competence.useTitle == true %>
+                      <h3 class="h6 fw-semibold mt-2"><%= competence.title %></h3>
+                    <% end %>
                   </div>
                 <% end %>
+              <% else %>
+                <div class="p-3 border rounded text-center shadow-sm bg-white" style="width: 100%; aspect-ratio: 1/1;">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 70%;">
+                    <% if competence.logo.present? %>
+                      <% if competence.logo.include?('.') %>
+                        <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                      <% else %>
+                        <%= image_tag url_for(competence.logo), alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                      <% end %>
+                    <% else %>
+                      <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                    <% end %>
+                  </div>
+                  <% if competence.useTitle == true %>
+                    <h3 class="h6 fw-semibold mt-2"><%= competence.title %></h3>
+                  <% end %>
+                </div>
+              <% end %>
+              <% if session[:admin] %>
+                <div class="mt-2 text-center">
+                  <%= link_to "Editer", edit_competence_path(competence.id), class: "btn btn-success btn-sm py-0 px-2" %>
+                  <%= link_to "Supprimer", competence_path(competence.id), 
+                      method: :delete,
+                      data: { confirm: "Êtes-vous sûr ?" },
+                      class: "btn btn-danger btn-sm py-0 px-2" %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
+          <% else %>
+            <div class="col-md-4 mb-3">
+              <% if competence.projets.any? %>
+                <%= link_to projets_path(filter: {competence_ids: [competence.id]}), class: "text-decoration-none" do %>
+                  <div class="p-3 border rounded text-center shadow-sm bg-white" style="width: 100%; aspect-ratio: 1/1;">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 70%;">
+                      <% if competence.logo.present? %>
+                        <% if competence.logo.include?('.') %>
+                          <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                        <% else %>
+                          <%= image_tag url_for(competence.logo), alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                        <% end %>
+                      <% else %>
+                        <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                      <% end %>
+                    </div>
+                    <% if competence.useTitle == true %>
+                      <h3 class="h6 fw-semibold mt-2"><%= competence.title %></h3>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% else %>
+                <div class="p-3 border rounded text-center shadow-sm bg-white" style="width: 100%; aspect-ratio: 1/1;">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 70%;">
+                    <% if competence.logo.present? %>
+                      <% if competence.logo.include?('.') %>
+                        <%= image_tag competence.logo, alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                      <% else %>
+                        <%= image_tag url_for(competence.logo), alt: competence.title, class: "img-fluid", style: "max-height: 100%; max-width: 100%; object-fit: contain;" %>
+                      <% end %>
+                    <% else %>
+                      <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                    <% end %>
+                  </div>
+                  <% if competence.useTitle == true %>
+                    <h3 class="h6 fw-semibold mt-2"><%= competence.title %></h3>
+                  <% end %>
+                </div>
+              <% end %>
+              <% if session[:admin] %>
+                <div class="mt-2 text-center">
+                  <%= link_to "Editer", edit_competence_path(competence.id), class: "btn btn-success btn-sm py-0 px-2" %>
+                  <%= link_to "Supprimer", competence_path(competence.id), 
+                      method: :delete,
+                      data: { confirm: "Êtes-vous sûr ?" },
+                      class: "btn btn-danger btn-sm py-0 px-2" %>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 
   <% if session[:admin] %>
     <div class="text-center mt-4">
